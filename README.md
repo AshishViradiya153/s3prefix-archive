@@ -10,8 +10,6 @@ The package uses a **modular layout**: the default entry covers listing, archivi
 
 Source code and issues: **[github.com/ashishviradiya/s3flow](https://github.com/ashishviradiya/s3flow)**.
 
-> **Note:** The npm package name `[s3flow](https://www.npmjs.com/package/s3flow)` is unrelated to the separately published `[s3-archive-stream](https://www.npmjs.com/package/s3-archive-stream)` package (different maintainers and API).
-
 # Table of Contents
 
 1. [Getting Started](#getting-started)
@@ -262,7 +260,7 @@ import { runFolderArchiveToS3 } from "s3flow/platform";
 
 ### BullMQ: worker with verification
 
-For a **Redis-backed queue**, use **`createFolderArchiveToS3Processor`** from `s3flow/bullmq` on a BullMQ `Worker`. The repo shows a processor that wraps the default runner and fails the job if post-upload byte verification does not match (same **`s3:GetObject`** on the output object as in the Lambda section):
+For a **Redis-backed queue**, use `**createFolderArchiveToS3Processor`\*\* from `s3flow/bullmq` on a BullMQ `Worker`. The repo shows a processor that wraps the default runner and fails the job if post-upload byte verification does not match:
 
 - `[examples/bullmq-archive-worker.ts](examples/bullmq-archive-worker.ts)`
 
