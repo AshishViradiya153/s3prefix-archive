@@ -1,8 +1,8 @@
 {
-  "name": "@ashishviradiya153/s3download",
+  "name": "s3-archive-download",
   "version": "0.1.2",
   "packageManager": "pnpm@9.15.9",
-  "description": "s3download — streaming S3 prefix → ZIP/tar/tar.gz with backpressure-safe pipelines, checkpoints, optional multipart upload (./platform), NDJSON prepared indexes, metrics, and a CLI.",
+  "description": "s3-archive-download — streaming S3 prefix → ZIP/tar/tar.gz with backpressure-safe pipelines, checkpoints, optional multipart upload (./platform), NDJSON prepared indexes, metrics, and a CLI.",
   "author": {
     "name": "Ashish Viradiya",
     "url": "https://github.com/AshishViradiya153"
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/AshishViradiya153/s3download#readme",
   "bin": {
-    "s3download": "./dist/cli.js"
+    "s3-archive-download": "./dist/cli.js"
   },
   "keywords": [
     "s3",
@@ -53,7 +53,7 @@
     "azure",
     "bullmq",
     "queue",
-    "s3download"
+    "s3-archive-download"
   ],
   "type": "module",
   "main": "./dist/index.cjs",

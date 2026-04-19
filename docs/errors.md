@@ -7,7 +7,7 @@ import {
   S3ArchiveError,
   describeArchiveFailure,
   isS3ArchiveError,
-} from "@ashishviradiya153/s3download";
+} from "s3-archive-download";
 
 try {
   await pumpArchiveToWritable(dest, options);

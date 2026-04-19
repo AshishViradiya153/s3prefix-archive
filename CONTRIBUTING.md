@@ -1,6 +1,6 @@
-# Contributing to s3download
+# Contributing to s3-archive-download
 
-Thank you for helping improve s3download. This document describes how to set up a development environment and what we expect in pull requests.
+Thank you for helping improve s3-archive-download. This document describes how to set up a development environment and what we expect in pull requests.
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ Other useful commands:
 ## Where things live
 
 - **Source:** `src/`
-- **Tests:** `test/` (Vitest; some suites use in-memory storage or chaos helpers—see README “Developing s3download”).
+- **Tests:** `test/` (Vitest; some suites use in-memory storage or chaos helpers—see README “Developing s3-archive-download”).
 - **Examples:** `examples/` (illustrative; not always executed in CI).
 - **Documentation hub:** `docs/README.md` (guides, troubleshooting; published in the npm package under `docs/`).
 - **Error catalog:** `docs/errors.md`

@@ -77,7 +77,7 @@ describe("SqlTableCheckpointStore", () => {
   it("round-trips JSON (postgres dialect)", async () => {
     const mem = createMemorySqlClient();
     const store = new SqlTableCheckpointStore(mem, {
-      tableName: "s3download_checkpoint",
+      tableName: "s3_archive_download_checkpoint",
       dialect: "postgres",
     });
     await store.save("job-a", sample());
@@ -108,16 +108,16 @@ describe("SqlTableCheckpointStore", () => {
   it("generates postgres-shaped SQL", async () => {
     const mem = createCapturingSqlClient();
     const store = new SqlTableCheckpointStore(mem, {
-      tableName: "s3download_checkpoint",
+      tableName: "s3_archive_download_checkpoint",
       dialect: "postgres",
     });
     await store.load("j1");
     expect(mem.lastQuerySql).toBe(
-      `SELECT "payload" FROM "s3download_checkpoint" WHERE "job_id" = $1`,
+      `SELECT "payload" FROM "s3_archive_download_checkpoint" WHERE "job_id" = $1`,
     );
     await store.save("j1", sample());
     expect(mem.lastExecuteSql).toMatch(
-      /^INSERT INTO "s3download_checkpoint" \("job_id", "payload"\) VALUES \(\$1, \$2\) ON CONFLICT \("job_id"\) DO UPDATE SET "payload" = EXCLUDED\."payload"$/,
+      /^INSERT INTO "s3_archive_download_checkpoint" \("job_id", "payload"\) VALUES \(\$1, \$2\) ON CONFLICT \("job_id"\) DO UPDATE SET "payload" = EXCLUDED\."payload"$/,
     );
   });
 

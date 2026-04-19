@@ -7,7 +7,7 @@ For very large prefixes, **listing twice** (once to explore, once to archive) do
 1. **List once** to an NDJSON file (one JSON object per line: `key`, `size`, optional `etag`, `lastModified`).
 2. **Archive later** from that file by passing **`preparedIndexNdjson`** (a `Readable`) so the pump **skips live listing** for that run.
 
-## APIs (all from `@ashishviradiya153/s3download`)
+## APIs (all from `s3-archive-download`)
 
 - **`streamPrefixIndexNdjson`** — async generator of NDJSON lines (list only).
 - **`createPreparedIndexReadable`** — `Readable` of NDJSON lines (same data as above).
@@ -25,6 +25,6 @@ For very large prefixes, **listing twice** (once to explore, once to archive) do
 
 ## Operational note
 
-Invalidation (when the index is stale) is **your** policy—s3download does not TTL the NDJSON.
+Invalidation (when the index is stale) is **your** policy—s3-archive-download does not TTL the NDJSON.
 
 Examples: [examples/prepared-index-two-step.ts](../../examples/prepared-index-two-step.ts), [examples/explicit-keys-prepared-index.ts](../../examples/explicit-keys-prepared-index.ts).

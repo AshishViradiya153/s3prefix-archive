@@ -13,7 +13,7 @@
 import { createWriteStream } from "node:fs";
 import { Readable } from "node:stream";
 import { S3Client } from "@aws-sdk/client-s3";
-import { pumpArchiveToWritable } from "@ashishviradiya153/s3download";
+import { pumpArchiveToWritable } from "s3-archive-download";
 
 async function main(): Promise<void> {
   const source = process.env.SOURCE_URI ?? "s3://my-bucket/reports/";

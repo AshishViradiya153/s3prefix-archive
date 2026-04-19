@@ -43,7 +43,10 @@ describe("zipStoreMinBytes (e2e)", () => {
       ]),
     );
 
-    const outPath = join(tmpdir(), `s3download-zip-store-${Date.now()}.zip`);
+    const outPath = join(
+      tmpdir(),
+      `s3-archive-download-zip-store-${Date.now()}.zip`,
+    );
     const dest = createWriteStream(outPath);
     try {
       const { stats } = await pumpArchiveToWritable(dest, {
@@ -77,7 +80,7 @@ describe("zipStoreMinBytes (e2e)", () => {
 
     const outPath = join(
       tmpdir(),
-      `s3download-zip-all-deflate-${Date.now()}.zip`,
+      `s3-archive-download-zip-all-deflate-${Date.now()}.zip`,
     );
     const dest = createWriteStream(outPath);
     try {

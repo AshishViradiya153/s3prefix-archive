@@ -1,6 +1,6 @@
 # Guide: IAM & selective exports
 
-AWS IAM typically separates **`s3:ListBucket`** (often scoped with `Condition` on `s3:prefix`) from **`s3:GetObject`**. s3download needs to align **how you enumerate keys** with what the role allows.
+AWS IAM typically separates **`s3:ListBucket`** (often scoped with `Condition` on `s3:prefix`) from **`s3:GetObject`**. s3-archive-download needs to align **how you enumerate keys** with what the role allows.
 
 ## Patterns
 

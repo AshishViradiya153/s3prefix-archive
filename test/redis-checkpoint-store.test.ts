@@ -52,7 +52,7 @@ describe("RedisCheckpointStore", () => {
 
   it("returns null on invalid JSON", async () => {
     const redis = createFakeRedis();
-    await redis.set("s3download:checkpoint:bad", "{");
+    await redis.set("s3-archive-download:checkpoint:bad", "{");
     const store = new RedisCheckpointStore(redis);
     expect(await store.load("bad")).toBeNull();
   });
@@ -61,7 +61,7 @@ describe("RedisCheckpointStore", () => {
     const redis = createFakeRedis();
     const store = new RedisCheckpointStore(redis, { ttlSeconds: 3600 });
     await store.save("j", sampleState());
-    expect(redis.expiries.get("s3download:checkpoint:j")).toBe(3600);
+    expect(redis.expiries.get("s3-archive-download:checkpoint:j")).toBe(3600);
   });
 
   it("throws when ttlSeconds is set but expire is missing", () => {

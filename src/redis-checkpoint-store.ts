@@ -15,7 +15,7 @@ export interface RedisCheckpointCommands {
 
 export interface RedisCheckpointStoreOptions {
   /**
-   * Prepended to each checkpoint key (default **`s3download:checkpoint:`**).
+   * Prepended to each checkpoint key (default **`s3-archive-download:checkpoint:`**).
    * Use a dedicated Redis DB or prefix per app/environment.
    */
   keyPrefix?: string;
@@ -43,7 +43,7 @@ export class RedisCheckpointStore implements CheckpointStore {
     options?: RedisCheckpointStoreOptions,
   ) {
     this.#redis = redis;
-    this.#prefix = options?.keyPrefix ?? "s3download:checkpoint:";
+    this.#prefix = options?.keyPrefix ?? "s3-archive-download:checkpoint:";
     this.#ttlSeconds = options?.ttlSeconds;
     if (this.#ttlSeconds != null && this.#ttlSeconds > 0) {
       if (typeof redis.expire !== "function") {

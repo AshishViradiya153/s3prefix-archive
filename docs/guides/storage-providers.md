@@ -7,10 +7,10 @@
 
 ## Cloud adapters (peer installs)
 
-| Module                                     | Class                      | Peer package            |
-| ------------------------------------------ | -------------------------- | ----------------------- |
-| `@ashishviradiya153/s3download/gcs`        | `GcsStorageProvider`       | `@google-cloud/storage` |
-| `@ashishviradiya153/s3download/azure-blob` | `AzureBlobStorageProvider` | `@azure/storage-blob`   |
+| Module                           | Class                      | Peer package            |
+| -------------------------------- | -------------------------- | ----------------------- |
+| `s3-archive-download/gcs`        | `GcsStorageProvider`       | `@google-cloud/storage` |
+| `s3-archive-download/azure-blob` | `AzureBlobStorageProvider` | `@azure/storage-blob`   |
 
 **URI shape:** keep **`source: "s3://bucket-or-container/prefix/"`** so the existing URI parser and path logic apply; data is read from GCS/Azure, not AWS.
 

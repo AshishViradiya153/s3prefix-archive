@@ -19,7 +19,7 @@ import {
   downloadFolderToFile,
   parseAdditionalListSources,
   parseS3Uri,
-} from "@ashishviradiya153/s3download";
+} from "s3-archive-download";
 
 function splitSourceUris(raw: string | undefined): string[] {
   if (!raw?.trim()) return [];

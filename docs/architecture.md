@@ -2,7 +2,7 @@
 
 ## Data plane
 
-s3download implements a **streaming data plane**:
+s3-archive-download implements a **streaming data plane**:
 
 1. **Discover objects** — `ListObjectsV2` (or merged roots, prepared NDJSON, or injected `StorageProvider.listObjects`).
 2. **Filter & schedule** — glob / size / optional `predicate`; optional checkpoint skip; optional dedupe and `deltaBaseline`.

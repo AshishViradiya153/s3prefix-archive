@@ -21,7 +21,7 @@ Align **`source`**, **`format`**, **`additionalListSources`** (canonical order),
 
 ## Browser vs server archive
 
-For large exports, prefer **server-side** `s3download`; for small sets, **presigned GET** URLs and a client-side zip library may suffice. Use **`recommendArchiveExecutionSurface`** for a stable hint. See [presigned-urls.md](presigned-urls.md).
+For large exports, prefer **server-side** `s3-archive-download`; for small sets, **presigned GET** URLs and a client-side zip library may suffice. Use **`recommendArchiveExecutionSurface`** for a stable hint. See [presigned-urls.md](presigned-urls.md).
 
 ## Where to ask for help
 

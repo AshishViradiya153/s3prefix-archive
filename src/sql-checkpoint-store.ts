@@ -33,19 +33,19 @@ export interface SqlTableCheckpointStoreOptions {
    *
    * ```sql
    * -- PostgreSQL
-   * CREATE TABLE s3download_checkpoint (
+   * CREATE TABLE s3_archive_download_checkpoint (
    *   job_id TEXT PRIMARY KEY,
    *   payload TEXT NOT NULL
    * );
    *
    * -- SQLite
-   * CREATE TABLE s3download_checkpoint (
+   * CREATE TABLE s3_archive_download_checkpoint (
    *   job_id TEXT PRIMARY KEY,
    *   payload TEXT NOT NULL
    * );
    *
    * -- MySQL (utf8mb4; InnoDB has a 3072-byte index prefix limit—TEXT PK is fine for typical job ids)
-   * CREATE TABLE s3download_checkpoint (
+   * CREATE TABLE s3_archive_download_checkpoint (
    *   job_id VARCHAR(512) PRIMARY KEY,
    *   payload LONGTEXT NOT NULL
    * );

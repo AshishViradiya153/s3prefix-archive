@@ -10,7 +10,7 @@ import {
   downloadFolderToFile,
   RedisCheckpointStore,
   type RedisCheckpointCommands,
-} from "@ashishviradiya153/s3download";
+} from "s3-archive-download";
 
 /** Minimal stand-in for demos; replace with a real Redis client. */
 class MemoryRedis implements RedisCheckpointCommands {
@@ -34,7 +34,7 @@ async function main(): Promise<void> {
 
   const client = new S3Client({});
   const store = new RedisCheckpointStore(new MemoryRedis(), {
-    keyPrefix: "s3download:example:",
+    keyPrefix: "s3-archive-download:example:",
   });
   const checkpoint = { jobId: "redis-example-1", store };
 

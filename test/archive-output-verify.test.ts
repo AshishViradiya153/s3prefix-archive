@@ -17,7 +17,7 @@ describe("archive-output-verify", () => {
   });
 
   it("verifyLocalArchiveFileBytesMatchStats succeeds when sizes match", async () => {
-    const p = join(tmpdir(), `s3download-verify-${Date.now()}.bin`);
+    const p = join(tmpdir(), `s3-archive-download-verify-${Date.now()}.bin`);
     const buf = Buffer.alloc(42, 7);
     await writeFile(p, buf);
     try {
@@ -34,7 +34,10 @@ describe("archive-output-verify", () => {
   });
 
   it("verifyLocalArchiveFileBytesMatchStats fails on mismatch", async () => {
-    const p = join(tmpdir(), `s3download-verify-bad-${Date.now()}.bin`);
+    const p = join(
+      tmpdir(),
+      `s3-archive-download-verify-bad-${Date.now()}.bin`,
+    );
     await writeFile(p, Buffer.from("ab"));
     try {
       const r = await verifyLocalArchiveFileBytesMatchStats(p, {
@@ -50,7 +53,10 @@ describe("archive-output-verify", () => {
   });
 
   it("verifyLocalArchiveFileBytesMatchStats respects toleranceBytes", async () => {
-    const p = join(tmpdir(), `s3download-verify-tol-${Date.now()}.bin`);
+    const p = join(
+      tmpdir(),
+      `s3-archive-download-verify-tol-${Date.now()}.bin`,
+    );
     await writeFile(p, Buffer.from("x"));
     try {
       const r = await verifyLocalArchiveFileBytesMatchStats(

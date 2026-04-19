@@ -28,7 +28,10 @@ export function resolveArchiveLogger(opts: {
     return resolveLogger(opts.logger);
   }
   if (opts.logger) {
-    return opts.logger.child({ lib: "s3download" }, { level: "debug" });
+    return opts.logger.child(
+      { lib: "s3-archive-download" },
+      { level: "debug" },
+    );
   }
   return getDebugDefaultLogger();
 }

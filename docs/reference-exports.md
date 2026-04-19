@@ -1,18 +1,18 @@
 # Reference: exports & modules
 
-**Source of truth:** every symbol and option field is in the published declarations — `dist/index.d.ts`, `dist/platform.d.ts`, `dist/bullmq.d.ts`, `dist/gcs.d.ts`, `dist/azure-blob.d.ts` (under `node_modules/@ashishviradiya153/s3download/` after install). The tables below are **representative**, not a complete catalog.
+**Source of truth:** every symbol and option field is in the published declarations — `dist/index.d.ts`, `dist/platform.d.ts`, `dist/bullmq.d.ts`, `dist/gcs.d.ts`, `dist/azure-blob.d.ts` (under `node_modules/s3-archive-download/` after install). The tables below are **representative**, not a complete catalog.
 
 **`package.json` `exports` paths** (only these exist):
 
-| User import                                | Build output        |
-| ------------------------------------------ | ------------------- |
-| `@ashishviradiya153/s3download`            | `dist/index.*`      |
-| `@ashishviradiya153/s3download/platform`   | `dist/platform.*`   |
-| `@ashishviradiya153/s3download/bullmq`     | `dist/bullmq.*`     |
-| `@ashishviradiya153/s3download/gcs`        | `dist/gcs.*`        |
-| `@ashishviradiya153/s3download/azure-blob` | `dist/azure-blob.*` |
+| User import                      | Build output        |
+| -------------------------------- | ------------------- |
+| `s3-archive-download`            | `dist/index.*`      |
+| `s3-archive-download/platform`   | `dist/platform.*`   |
+| `s3-archive-download/bullmq`     | `dist/bullmq.*`     |
+| `s3-archive-download/gcs`        | `dist/gcs.*`        |
+| `s3-archive-download/azure-blob` | `dist/azure-blob.*` |
 
-## `@ashishviradiya153/s3download` (default)
+## `s3-archive-download` (default)
 
 Canonical export list: **`src/index.ts`** (published as **`dist/index.d.ts`**). The table below groups **real** exports; it is still not exhaustive.
 
@@ -42,13 +42,13 @@ Canonical export list: **`src/index.ts`** (published as **`dist/index.d.ts`**). 
 
 Anything not listed here is still discoverable from **`dist/index.d.ts`**.
 
-## `@ashishviradiya153/s3download/platform` (`src/platform.ts`)
+## `s3-archive-download/platform` (`src/platform.ts`)
 
 - **`runFolderArchiveToS3`** — multipart upload to S3 (requires `@aws-sdk/lib-storage`).
 - **`runFolderArchiveToWritable`** — same pump to an arbitrary `Writable`.
 - Re-exports: **`FileCheckpointStore`**, **`SqlTableCheckpointStore`**, checkpoint/SQL types, **`resolveArchiveContentType`**, **`resolveArchiveLogger`**, **`resolveLogger`**, and the same **in-memory archive job** errors/registry types as the main entry (`ArchiveJobIdConflictError`, …, **`InMemoryArchiveJobRegistry`**).
 
-## `@ashishviradiya153/s3download/bullmq` (`src/bullmq.ts`)
+## `s3-archive-download/bullmq` (`src/bullmq.ts`)
 
 - **`FOLDER_ARCHIVE_TO_S3_JOB_NAME`**, **`DEFAULT_FOLDER_ARCHIVE_QUEUE_NAME`**
 - **`FolderArchiveToS3JobData`**, **`FolderArchiveJobRunContext`**
@@ -58,11 +58,11 @@ Anything not listed here is still discoverable from **`dist/index.d.ts`**.
 
 Requires the **`bullmq`** peer where you run workers.
 
-## `@ashishviradiya153/s3download/gcs` (`src/gcs.ts`)
+## `s3-archive-download/gcs` (`src/gcs.ts`)
 
 - **`GcsStorageProvider`** (+ options type)
 
-## `@ashishviradiya153/s3download/azure-blob` (`src/azure-blob.ts`)
+## `s3-archive-download/azure-blob` (`src/azure-blob.ts`)
 
 - **`AzureBlobStorageProvider`** (+ options type)
 

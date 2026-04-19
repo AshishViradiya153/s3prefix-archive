@@ -126,7 +126,7 @@ function createArchiveProgressBar(): {
 }
 
 const program = new Command()
-  .name("s3download")
+  .name("s3-archive-download")
   .description("Stream S3 prefixes to ZIP/tar archives or NDJSON indexes.")
   .version(readVersion());
 
