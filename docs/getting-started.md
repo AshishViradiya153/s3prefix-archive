@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- **Node.js** `>= 18.18.0` (see `engines` in `package.json`).
+- **Node.js** `>= 20.19.0` (see `engines` in `package.json`).
 - **AWS credentials** for the default S3 path: environment variables, shared config, IAM role, SSO, or any method supported by [AWS SDK for JavaScript v3](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/).
 
 ## Install

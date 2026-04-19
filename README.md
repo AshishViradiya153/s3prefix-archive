@@ -4,7 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/s3flow?style=flat-square&logo=npm&label=npm)](https://www.npmjs.com/package/s3flow)
 [![CI](https://img.shields.io/github/actions/workflow/status/AshishViradiya153/s3flow/ci.yml?branch=main&logo=github&label=CI&style=flat-square)](https://github.com/AshishViradiya153/s3flow/actions/workflows/ci.yml?query=branch%3Amain)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18.18-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20.19-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](https://github.com/AshishViradiya153/s3flow/blob/main/LICENSE)
 
 </div>
@@ -90,7 +90,7 @@ For more patterns (resume, prepared index, uploading the archive to S3), continu
 
 **Runtime**
 
-- **Node.js >= 18.18** (uses `Readable.fromWeb` for AWS SDK response bodies when needed).
+- **Node.js >= 20.19** (uses `Readable.fromWeb` for AWS SDK response bodies when needed; matches `engines` in `package.json`).
 
 **Dependencies**
 
@@ -484,7 +484,7 @@ npm run pack:dry-run
 
 1. Confirm **`repository`**, **`bugs`**, and **`homepage`** in `package.json` match your GitHub repository.
 2. Update **[CHANGELOG.md](CHANGELOG.md)** for user-visible fixes and features (semver-facing notes).
-3. Run **`npm run verify`**. **`prepublishOnly`** runs the same checks on **`npm publish`**. Pull requests should stay green: CI runs the same **`verify`** script on Node.js **18, 20, 22, and 24** (see `.github/workflows/ci.yml`).
+3. Run **`npm run verify`**. **`prepublishOnly`** runs the same checks on **`npm publish`**. Pull requests should stay green: CI runs the same **`verify`** script on Node.js **20, 22, and 24** (see `.github/workflows/ci.yml`).
 4. Run **`npm run pack:dry-run`** to confirm the published tarball contains `dist/`, `docs/`, `README.md`, `LICENSE`, and other `files` from `package.json` (for example `CHANGELOG.md`, `CONTRIBUTING.md`, `SECURITY.md`).
 
 ## Giving feedback and contributing

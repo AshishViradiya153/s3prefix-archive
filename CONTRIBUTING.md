@@ -4,7 +4,7 @@ Thank you for helping improve s3flow. This document describes how to set up a de
 
 ## Prerequisites
 
-- **Node.js** `>=18.18.0` (see `engines` in `package.json`).
+- **Node.js** `>=20.19.0` (see `engines` in `package.json`).
 - **pnpm** `9.x` (see `packageManager` in `package.json`). If you use Corepack: `corepack enable` then `pnpm` will match the repo.
 
 ## Getting started
@@ -14,7 +14,7 @@ pnpm install
 pnpm run verify
 ```
 
-`verify` runs typecheck, lint, format check, knip, tests, publint, and attw. **`pnpm run verify` must pass** before a pull request is merged. **CI** (GitHub Actions) runs the same script on Node.js **18, 20, 22, and 24** for pushes and pull requests to `main` or `master` (see `.github/workflows/ci.yml`).
+`verify` runs typecheck, lint, format check, knip, tests, publint, and attw. **`pnpm run verify` must pass** before a pull request is merged. **CI** (GitHub Actions) runs the same script on Node.js **20, 22, and 24** for pushes and pull requests to `main` or `master` (see `.github/workflows/ci.yml`).
 
 Other useful commands:
 
