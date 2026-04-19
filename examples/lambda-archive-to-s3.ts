@@ -2,15 +2,15 @@
  * Example AWS Lambda handler: stream an S3 prefix into a ZIP uploaded to another bucket/key,
  * then confirm the written object size matches pump `stats.bytesWritten` via `HeadObject`.
  *
- * Package your function with `s3-archive-download`, `@aws-sdk/client-s3`, and `@aws-sdk/lib-storage` (`Upload`).
+ * Package your function with `s3prefix-archive`, `@aws-sdk/client-s3`, and `@aws-sdk/lib-storage` (`Upload`).
  * IAM: `s3:ListBucket` + `s3:GetObject` on the source prefix; `s3:PutObject` (multipart) on the destination;
  * **`s3:GetObject` on the destination object** for `HeadObject` during byte verify (same action as GET).
  *
  * Environment (illustrative): `SOURCE_URI`, `DEST_BUCKET`, `DEST_KEY`.
  */
 import { S3Client } from "@aws-sdk/client-s3";
-import { verifyS3ObjectBytesMatchArchiveStats } from "s3-archive-download";
-import { runFolderArchiveToS3 } from "s3-archive-download/platform";
+import { verifyS3ObjectBytesMatchArchiveStats } from "s3prefix-archive";
+import { runFolderArchiveToS3 } from "s3prefix-archive/platform";
 
 export async function handler(): Promise<{ statusCode: number; body: string }> {
   const source = process.env.SOURCE_URI;

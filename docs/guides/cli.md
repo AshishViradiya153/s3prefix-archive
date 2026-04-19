@@ -1,10 +1,10 @@
 # Guide: CLI
 
-Installing the package adds the **`s3-archive-download`** binary (`package.json` **`bin`**).
+Installing the package adds the **`s3prefix-archive`** binary (`package.json` **`bin`**).
 
 ```bash
-npx s3-archive-download archive --source s3://bucket/prefix/ -o out.zip
-npx s3-archive-download index --source s3://bucket/prefix/ -o index.ndjson
+npx s3prefix-archive archive --source s3://bucket/prefix/ -o out.zip
+npx s3prefix-archive index --source s3://bucket/prefix/ -o index.ndjson
 ```
 
 ## Benchmark
@@ -12,7 +12,7 @@ npx s3-archive-download index --source s3://bucket/prefix/ -o index.ndjson
 Discards bytes so disk I/O does not dominate; use **`--profile list`** to stress **`ListObjectsV2`** + NDJSON serialization without **`GetObject`**.
 
 ```bash
-s3-archive-download benchmark --source s3://bucket/prefix/ --format zip --json
+s3prefix-archive benchmark --source s3://bucket/prefix/ --format zip --json
 ```
 
 Human-readable output on stderr; **`--json`** prints one machine-readable line on stdout (see root README [CLI section](../../README.md#command-line-interface)).

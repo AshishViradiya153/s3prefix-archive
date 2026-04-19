@@ -16,7 +16,7 @@ You must keep **`source`**, **`format`**, **`checkpoint.jobId`**, and **`checkpo
 
 ## APIs
 
-- **First run with checkpoint:** pass **`checkpoint: { jobId, store }`** to **`downloadFolderToFile`** / **`pumpArchiveToWritable`** (`s3-archive-download`) or **`runFolderArchiveToS3`** (`s3-archive-download/platform`) — same semantics as a run without resume, but state is persisted.
+- **First run with checkpoint:** pass **`checkpoint: { jobId, store }`** to **`downloadFolderToFile`** / **`pumpArchiveToWritable`** (`s3prefix-archive`) or **`runFolderArchiveToS3`** (`s3prefix-archive/platform`) — same semantics as a run without resume, but state is persisted.
 - **Resume:** use **`resumeFolderArchiveToFile`** / **`resumeFolderArchiveToWritable`** — they require existing state or fail with **`CHECKPOINT_NOT_FOUND`**.
 
 Dedupe modes (`dedupeArchivePaths`, `dedupeContentByEtag`) require compatible checkpoint metadata; mismatches raise **`CHECKPOINT_DEDUPE_RESUME`**. See engineering notes in the root README.

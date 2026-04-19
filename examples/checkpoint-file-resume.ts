@@ -9,7 +9,7 @@ import {
   downloadFolderToFile,
   FileCheckpointStore,
   resumeFolderArchiveToFile,
-} from "s3-archive-download";
+} from "s3prefix-archive";
 
 async function main(): Promise<void> {
   const source = process.env.SOURCE_URI;

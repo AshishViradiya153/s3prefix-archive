@@ -1,20 +1,20 @@
 /**
- * Sketch: adapt **`pg.Pool`** (node-postgres) to s3-archive-download's **`SqlCheckpointClient`** for
+ * Sketch: adapt **`pg.Pool`** (node-postgres) to s3prefix-archive's **`SqlCheckpointClient`** for
  * **`SqlTableCheckpointStore`**. Install **`pg`** in your application; it is not a dependency of
- * the `s3-archive-download` package.
+ * the `s3prefix-archive` package.
  *
  * Create the table once (Postgres):
  *
  * ```sql
- * CREATE TABLE s3_archive_download_checkpoint (
+ * CREATE TABLE s3prefix_archive_checkpoint (
  *   job_id TEXT PRIMARY KEY,
  *   payload TEXT NOT NULL
  * );
  * ```
  *
- * Then wire `checkpoint.store` with `new SqlTableCheckpointStore(createSqlCheckpointClientFromPgPool(pool), { dialect: "postgres", tableName: "s3_archive_download_checkpoint" })`.
+ * Then wire `checkpoint.store` with `new SqlTableCheckpointStore(createSqlCheckpointClientFromPgPool(pool), { dialect: "postgres", tableName: "s3prefix_archive_checkpoint" })`.
  */
-import type { SqlCheckpointClient } from "s3-archive-download";
+import type { SqlCheckpointClient } from "s3prefix-archive";
 
 /** Duck type compatible with `pg.Pool#query` result shape. */
 export interface PgLikePool {

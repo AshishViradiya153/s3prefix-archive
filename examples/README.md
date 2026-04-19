@@ -1,6 +1,6 @@
-# s3-archive-download examples
+# s3prefix-archive examples
 
-Runnable sketches aligned with published imports (`s3-archive-download`, `s3-archive-download/platform`, …). From a project that depends on `s3-archive-download`, copy a file and adjust environment variables and ARNs/buckets. Deeper guides live in **[`docs/README.md`](../docs/README.md)**.
+Runnable sketches aligned with published imports (`s3prefix-archive`, `s3prefix-archive/platform`, …). From a project that depends on `s3prefix-archive`, copy a file and adjust environment variables and ARNs/buckets. Deeper guides live in **[`docs/README.md`](../docs/README.md)**.
 
 | Example                                                                  | What it shows                                                                                                                |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -24,4 +24,4 @@ Runnable sketches aligned with published imports (`s3-archive-download`, `s3-arc
 | [prometheus-memory-register.ts](prometheus-memory-register.ts)           | `prometheus: { register }` — completion metrics on a `prom-client` `Registry`                                                |
 | [cost-and-strategy-hints-memory.ts](cost-and-strategy-hints-memory.ts)   | `estimateArchiveRunS3Usd` + `suggestArchiveRunStrategyHints` after a run                                                     |
 
-CLI (`npx s3-archive-download archive`, `npx s3-archive-download index`, `npx s3-archive-download benchmark`) is documented in the root [README.md](../README.md).
+CLI (`npx s3prefix-archive archive`, `npx s3prefix-archive index`, `npx s3prefix-archive benchmark`) is documented in the root [README.md](../README.md).

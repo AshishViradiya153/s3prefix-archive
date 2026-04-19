@@ -6,7 +6,7 @@
  */
 import { createWriteStream } from "node:fs";
 import { S3Client } from "@aws-sdk/client-s3";
-import { createFolderArchiveStream } from "s3-archive-download";
+import { createFolderArchiveStream } from "s3prefix-archive";
 
 async function main(): Promise<void> {
   const source = process.env.SOURCE_URI;

@@ -24,7 +24,7 @@ export const FOLDER_ARCHIVE_TO_S3_JOB_NAME = "folder-archive-to-s3" as const;
  * @example `new Queue(DEFAULT_FOLDER_ARCHIVE_QUEUE_NAME, { connection })`
  */
 export const DEFAULT_FOLDER_ARCHIVE_QUEUE_NAME =
-  "s3-archive-download:folder-archive-to-s3";
+  "s3prefix-archive:folder-archive-to-s3";
 
 /**
  * JSON-serializable payload for Redis (no functions, no `RegExp` instances).
@@ -211,10 +211,10 @@ export interface CreateFolderArchiveToS3ProcessorOptions {
  * @example
  * ```ts
  * import { Worker } from "bullmq";
- * import { createFolderArchiveToS3Processor, FOLDER_ARCHIVE_TO_S3_JOB_NAME } from "s3-archive-download/bullmq";
+ * import { createFolderArchiveToS3Processor, FOLDER_ARCHIVE_TO_S3_JOB_NAME } from "s3prefix-archive/bullmq";
  *
  * const processor = createFolderArchiveToS3Processor({});
- * new Worker("s3-archive-download:folder-archive-to-s3", processor, { connection });
+ * new Worker("s3prefix-archive:folder-archive-to-s3", processor, { connection });
  * ```
  */
 export function createFolderArchiveToS3Processor(

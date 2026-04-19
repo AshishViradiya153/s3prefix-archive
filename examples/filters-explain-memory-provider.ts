@@ -2,14 +2,14 @@
  * No AWS credentials: `MemoryStorageProvider` injects list/get for tests and demos.
  * Shows `filters`, `explain`, and post-run `summarizeArchiveRunClassifications`.
  *
- * Writes `./_s3-archive-download-example-memory.zip` in the current working directory.
+ * Writes `./_s3prefix-archive-example-memory.zip` in the current working directory.
  */
 import { createWriteStream } from "node:fs";
 import {
   MemoryStorageProvider,
   pumpArchiveToWritable,
   summarizeArchiveRunClassifications,
-} from "s3-archive-download";
+} from "s3prefix-archive";
 
 async function main(): Promise<void> {
   const storageProvider = new MemoryStorageProvider(
@@ -19,7 +19,7 @@ async function main(): Promise<void> {
     ]),
   );
 
-  const outPath = "./_s3-archive-download-example-memory.zip";
+  const outPath = "./_s3prefix-archive-example-memory.zip";
   const { stats } = await pumpArchiveToWritable(createWriteStream(outPath), {
     source: "s3://demo-bucket/docs/",
     format: "zip",

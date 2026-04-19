@@ -9,7 +9,7 @@ import { S3Client } from "@aws-sdk/client-s3";
 import {
   createFolderArchiveStream,
   suggestedCacheControlForArchiveDownload,
-} from "s3-archive-download";
+} from "s3prefix-archive";
 
 function main(): void {
   const source = process.env.SOURCE_URI;

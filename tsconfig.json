@@ -6,11 +6,11 @@
     "lib": ["ES2022"],
     "baseUrl": ".",
     "paths": {
-      "s3-archive-download": ["./src/index.ts"],
-      "s3-archive-download/platform": ["./src/platform.ts"],
-      "s3-archive-download/bullmq": ["./src/bullmq.ts"],
-      "s3-archive-download/gcs": ["./src/gcs.ts"],
-      "s3-archive-download/azure-blob": ["./src/azure-blob.ts"]
+      "s3prefix-archive": ["./src/index.ts"],
+      "s3prefix-archive/platform": ["./src/platform.ts"],
+      "s3prefix-archive/bullmq": ["./src/bullmq.ts"],
+      "s3prefix-archive/gcs": ["./src/gcs.ts"],
+      "s3prefix-archive/azure-blob": ["./src/azure-blob.ts"]
     },
     "strict": true,
     "skipLibCheck": true,

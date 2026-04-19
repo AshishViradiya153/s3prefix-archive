@@ -15,21 +15,21 @@ Include as much of the following as you can:
 
 - A short description of the impact (confidentiality, integrity, availability).
 - Steps to reproduce, or a minimal proof of concept.
-- Affected **s3-archive-download** version(s) and **Node.js** version.
+- Affected **s3prefix-archive** version(s) and **Node.js** version.
 - Whether you believe the issue is already exploitable in typical use or only under narrow conditions.
 
 ## Scope
 
 **In scope** for this project:
 
-- The **s3-archive-download** library and **CLI** code shipped in this repository (including optional entry points such as `s3-archive-download/platform`, `s3-archive-download/bullmq`, and cloud adapters when used as documented).
+- The **s3prefix-archive** library and **CLI** code shipped in this repository (including optional entry points such as `s3prefix-archive/platform`, `s3prefix-archive/bullmq`, and cloud adapters when used as documented).
 - Dependencies **only** insofar as we can mitigate by upgrading or changing our usage (we do not fix upstream AWS/GCP/Azure SDK bugs ourselves).
 
 **Out of scope** (report to the vendor or project instead):
 
 - Issues in **AWS**, **Google Cloud**, **Azure**, or other provider APIs or consoles.
 - Compromise of **your** AWS credentials, IAM policies, or buckets outside what this library documents.
-- Denial-of-service against **your** infrastructure that is not specific to a defect in s3-archive-download's code (for example generic high traffic without a bug).
+- Denial-of-service against **your** infrastructure that is not specific to a defect in s3prefix-archive's code (for example generic high traffic without a bug).
 
 ## Disclosure
 
