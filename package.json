@@ -1,6 +1,6 @@
 {
   "name": "s3prefix-archive",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "packageManager": "pnpm@9.15.9",
   "description": "s3prefix-archive — streaming S3 prefix → ZIP/tar/tar.gz with backpressure-safe pipelines, checkpoints, optional multipart upload (./platform), NDJSON prepared indexes, metrics, and a CLI.",
   "author": {
