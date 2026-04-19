@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "baseUrl": ".",
+    "paths": {
+      "s3flow": ["./src/index.ts"],
+      "s3flow/platform": ["./src/platform.ts"],
+      "s3flow/bullmq": ["./src/bullmq.ts"],
+      "s3flow/gcs": ["./src/gcs.ts"],
+      "s3flow/azure-blob": ["./src/azure-blob.ts"]
+    },
+    "strict": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "verbatimModuleSyntax": true,
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "examples/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

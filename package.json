@@ -1,0 +1,201 @@
+{
+  "name": "s3flow",
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.9",
+  "description": "s3flow — streaming S3 prefix → ZIP/tar/tar.gz with backpressure-safe pipelines, checkpoints, optional multipart upload (./platform), NDJSON prepared indexes, metrics, and a CLI.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishviradiya/s3flow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashishviradiya/s3flow/issues"
+  },
+  "homepage": "https://github.com/ashishviradiya/s3flow#readme",
+  "bin": {
+    "s3flow": "./dist/cli.js"
+  },
+  "keywords": [
+    "s3",
+    "aws",
+    "zip",
+    "archive",
+    "stream",
+    "download",
+    "folder",
+    "cli",
+    "commander",
+    "cli-progress",
+    "micromatch",
+    "glob",
+    "prometheus",
+    "metrics",
+    "yazl",
+    "export",
+    "multipart",
+    "checkpoint",
+    "ndjson",
+    "backpressure",
+    "tar",
+    "tar.gz",
+    "gzip",
+    "tarball",
+    "google-cloud-storage",
+    "gcs",
+    "azure-blob",
+    "azure",
+    "bullmq",
+    "queue",
+    "s3flow"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./platform": {
+      "import": {
+        "types": "./dist/platform.d.ts",
+        "default": "./dist/platform.js"
+      },
+      "require": {
+        "types": "./dist/platform.d.cts",
+        "default": "./dist/platform.cjs"
+      }
+    },
+    "./bullmq": {
+      "import": {
+        "types": "./dist/bullmq.d.ts",
+        "default": "./dist/bullmq.js"
+      },
+      "require": {
+        "types": "./dist/bullmq.d.cts",
+        "default": "./dist/bullmq.cjs"
+      }
+    },
+    "./gcs": {
+      "import": {
+        "types": "./dist/gcs.d.ts",
+        "default": "./dist/gcs.js"
+      },
+      "require": {
+        "types": "./dist/gcs.d.cts",
+        "default": "./dist/gcs.cjs"
+      }
+    },
+    "./azure-blob": {
+      "import": {
+        "types": "./dist/azure-blob.d.ts",
+        "default": "./dist/azure-blob.js"
+      },
+      "require": {
+        "types": "./dist/azure-blob.d.cts",
+        "default": "./dist/azure-blob.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:release": "cross-env SOURCEMAP=false tsup",
+    "prepack": "npm run build:release",
+    "test": "npm run build:release && vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "knip": "knip",
+    "publint": "publint",
+    "attw": "attw --pack . --profile node16",
+    "pack:dry-run": "npm pack --dry-run",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run knip && npm run test && npm run publint && npm run attw",
+    "benchmark": "node dist/cli.js benchmark",
+    "prepublishOnly": "npm run verify"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1032.0",
+    "@aws-sdk/s3-request-presigner": "^3.1032.0",
+    "cli-progress": "^3.12.0",
+    "commander": "^14.0.3",
+    "micromatch": "^4.0.8",
+    "mime-types": "^3.0.2",
+    "p-limit": "^6.2.0",
+    "p-retry": "^6.2.1",
+    "pino": "^9.14.0",
+    "prom-client": "^15.1.3",
+    "tar-stream": "^3.1.8",
+    "yazl": "^3.3.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@aws-sdk/lib-storage": "^3.1032.0",
+    "@azure/storage-blob": "^12.26.0",
+    "@eslint/js": "^9.39.4",
+    "@google-cloud/storage": "^7.14.0",
+    "@smithy/util-stream": "^4.5.23",
+    "@types/cli-progress": "^3.11.6",
+    "@types/micromatch": "^4.0.10",
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^22.19.17",
+    "@types/tar-stream": "^3.1.4",
+    "@types/yazl": "^3.3.1",
+    "aws-sdk-client-mock": "^4.1.0",
+    "bullmq": "^5.74.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.39.4",
+    "knip": "^6.4.1",
+    "prettier": "^3.8.3",
+    "publint": "^0.3.18",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.2",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@aws-sdk/lib-storage": "^3.1031.0",
+    "@azure/storage-blob": "^12.26.0",
+    "@google-cloud/storage": "^7.14.0",
+    "bullmq": "^5.74.1"
+  },
+  "peerDependenciesMeta": {
+    "@aws-sdk/lib-storage": {
+      "optional": true
+    },
+    "@azure/storage-blob": {
+      "optional": true
+    },
+    "@google-cloud/storage": {
+      "optional": true
+    },
+    "bullmq": {
+      "optional": true
+    }
+  }
+}

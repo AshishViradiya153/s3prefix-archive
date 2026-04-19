@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "project": ["src/**/*.ts", "test/**/*.ts", "*.ts"],
+  "ignoreIssues": {
+    "src/archive-explain.ts": ["types"],
+    "src/retry.ts": ["types"],
+    "src/download-to-file.ts": ["duplicates"]
+  }
+}

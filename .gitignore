@@ -1,0 +1,32 @@
+# Dependencies & artifacts
+node_modules/
+dist/
+coverage/
+
+# Logs & OS
+*.log
+.DS_Store
+
+# Secrets & local env (never commit)
+.env
+.env.*
+!.env.example
+
+# Markdown: allow published docs and package metadata (other drafts stay local or use a different pattern).
+*.md
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+!SECURITY.md
+!docs/**/*.md
+!examples/README.md
+
+# pnpm store if created inside the repo
+.pnpm-store/
+pnpm-store/
+
+# Packed tarballs from npm pack / publish
+*.tgz
+
+# Optional local test output (e.g. Vitest JSON)
+test-results/
