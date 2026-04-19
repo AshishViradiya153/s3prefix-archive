@@ -23,7 +23,8 @@ export const FOLDER_ARCHIVE_TO_S3_JOB_NAME = "folder-archive-to-s3" as const;
  * Suggested queue name; callers may use any Redis queue name.
  * @example `new Queue(DEFAULT_FOLDER_ARCHIVE_QUEUE_NAME, { connection })`
  */
-export const DEFAULT_FOLDER_ARCHIVE_QUEUE_NAME = "s3download:folder-archive-to-s3";
+export const DEFAULT_FOLDER_ARCHIVE_QUEUE_NAME =
+  "s3download:folder-archive-to-s3";
 
 /**
  * JSON-serializable payload for Redis (no functions, no `RegExp` instances).

@@ -134,13 +134,13 @@ Use **Node 24** when developing this repository (see [.nvmrc](.nvmrc)): `nvm use
 
 s3download follows a **modular entry** pattern similar in spirit to per-service packages in AWS SDK for JavaScript v3: import only what you need.
 
-| Import path         | Role                                                                                                           |
-| ------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Import path             | Role                                                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `s3download`            | Core: list → get → archive → your `Writable` or HTTP; file helpers; checkpoints; metrics; CLI binary `s3download`. |
-| `s3download/platform`   | Multipart upload of the archive to S3 (`runFolderArchiveToS3`, checkpoint types, job helpers).                 |
-| `s3download/bullmq`     | JSON-safe job payloads and processor for `runFolderArchiveToS3` (install `bullmq` peer).                       |
-| `s3download/gcs`        | `GcsStorageProvider` for **Google Cloud Storage** lists + reads (install `@google-cloud/storage` peer).        |
-| `s3download/azure-blob` | `AzureBlobStorageProvider` for **Azure Blob Storage** (install `@azure/storage-blob` peer).                    |
+| `s3download/platform`   | Multipart upload of the archive to S3 (`runFolderArchiveToS3`, checkpoint types, job helpers).                     |
+| `s3download/bullmq`     | JSON-safe job payloads and processor for `runFolderArchiveToS3` (install `bullmq` peer).                           |
+| `s3download/gcs`        | `GcsStorageProvider` for **Google Cloud Storage** lists + reads (install `@google-cloud/storage` peer).            |
+| `s3download/azure-blob` | `AzureBlobStorageProvider` for **Azure Blob Storage** (install `@azure/storage-blob` peer).                        |
 
 Example:
 
@@ -244,7 +244,7 @@ For HTTP or custom pipelines, pass any `Readable` as `preparedIndexNdjson` on `c
 
 s3download is built around **list → filter → get → encode**. AWS IAM is usually split between **`s3:ListBucket`** (often constrained with `Condition` `StringLike` on `s3:prefix`) and **`s3:GetObject`** on specific keys or prefixes. Your integration should match how your org grants those actions.
 
-| Goal                                                                       | What s3download does                                                                                                                                                                                                                    | IAM / operations note                                                                                                                                                                                                                            |
+| Goal                                                                       | What s3download does                                                                                                                                                                                                                | IAM / operations note                                                                                                                                                                                                                            |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Only some objects under one prefix**                                     | Use **`filters.include`** / **`filters.exclude`** / **`filters.predicate`** (see [filters.ts](src/filters.ts)).                                                                                                                     | Listing still runs for the full **`source`** prefix; keys that fail the filter are skipped **after** list. You need **`ListBucket`** on that prefix (or a narrower `source` you are allowed to list).                                            |
 | **Several disjoint “folders” (same or other buckets)**                     | Use **`additionalListSources`**: extra `s3://bucket/prefix/` roots merged after the primary list ([archive-pump-flow.ts](src/archive-pump-flow.ts)). Each object can carry **`ObjectMeta.bucket`** for the correct **`GetObject`**. | Incompatible with **`preparedIndexNdjson`**. Your role needs list + get on **every** root you pass.                                                                                                                                              |

@@ -75,7 +75,10 @@ describe("zipStoreMinBytes (e2e)", () => {
       ]),
     );
 
-    const outPath = join(tmpdir(), `s3download-zip-all-deflate-${Date.now()}.zip`);
+    const outPath = join(
+      tmpdir(),
+      `s3download-zip-all-deflate-${Date.now()}.zip`,
+    );
     const dest = createWriteStream(outPath);
     try {
       await pumpArchiveToWritable(dest, {

@@ -7,8 +7,8 @@
 
 ## Cloud adapters (peer installs)
 
-| Module              | Class                      | Peer package            |
-| ------------------- | -------------------------- | ----------------------- |
+| Module                  | Class                      | Peer package            |
+| ----------------------- | -------------------------- | ----------------------- |
 | `s3download/gcs`        | `GcsStorageProvider`       | `@google-cloud/storage` |
 | `s3download/azure-blob` | `AzureBlobStorageProvider` | `@azure/storage-blob`   |
 

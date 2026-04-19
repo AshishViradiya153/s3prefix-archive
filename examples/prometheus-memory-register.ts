@@ -14,13 +14,16 @@ async function main(): Promise<void> {
     new Map([["p/a.txt", { body: Buffer.from("metrics") }]]),
   );
 
-  await pumpArchiveToWritable(createWriteStream("./_s3download-prom-example.zip"), {
-    source: "s3://demo-bucket/p/",
-    format: "zip",
-    concurrency: 1,
-    storageProvider,
-    prometheus: { register, prefix: "demo_archive" },
-  });
+  await pumpArchiveToWritable(
+    createWriteStream("./_s3download-prom-example.zip"),
+    {
+      source: "s3://demo-bucket/p/",
+      format: "zip",
+      concurrency: 1,
+      storageProvider,
+      prometheus: { register, prefix: "demo_archive" },
+    },
+  );
 
   process.stdout.write(await register.metrics());
 }

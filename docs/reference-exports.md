@@ -4,8 +4,8 @@
 
 **`package.json` `exports` paths** (only these exist):
 
-| User import         | Build output        |
-| ------------------- | ------------------- |
+| User import             | Build output        |
+| ----------------------- | ------------------- |
 | `s3download`            | `dist/index.*`      |
 | `s3download/platform`   | `dist/platform.*`   |
 | `s3download/bullmq`     | `dist/bullmq.*`     |
