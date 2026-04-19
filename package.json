@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "packageManager": "pnpm@9.15.9",
   "description": "s3flow — streaming S3 prefix → ZIP/tar/tar.gz with backpressure-safe pipelines, checkpoints, optional multipart upload (./platform), NDJSON prepared indexes, metrics, and a CLI.",
+  "author": {
+    "name": "Ashish Viradiya",
+    "url": "https://github.com/AshishViradiya153"
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public",
